@@ -1,2 +1,0 @@
-//= testscript.js
-//= newscript.js

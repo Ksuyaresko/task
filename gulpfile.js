@@ -71,10 +71,9 @@ gulp.task('main-bower-files', function() {
   });
 });*/
 gulp.task('serve', function() {
-
     browserSync.init({
-        server: "public/"
-    });    gulp.watch("public/*.html").on('change', browserSync.reload);
+        server: "public"
+    });    gulp.watch("./public/*.html").on('change', browserSync.reload);
 });
 
 //twig
@@ -96,7 +95,7 @@ gulp.task('compile', function () {
 
 //WATCH
 gulp.task('watch', function() {
-    gulp.watch('frontend/style/*.scss', ['sass']);
+    gulp.watch('frontend/style/*.scss', ['sass', 'serve']);
     gulp.watch('view/*.twig', ['compile']);
     gulp.watch('frontend/js/*.js', ['js']);
     gulp.watch('public/*.html', ['serve']);
