@@ -18,7 +18,7 @@ var gulp = require('gulp'),
 
 //CSS
 gulp.task('sass', function(){
-  gulp.src('frontend/style/main.scss')
+  gulp.src('frontend/style/index.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -52,6 +52,12 @@ gulp.task('font', function() {
     .pipe(gulp.dest('public/font/'))
 });
 
+//video
+gulp.task('video', function() {
+    gulp.src('frontend/video/**')
+    .pipe(gulp.dest('public/video/'))
+});
+
 //bower
 gulp.task('main-bower-files', function() {
     return gulp.src('./bower.json')
@@ -59,21 +65,6 @@ gulp.task('main-bower-files', function() {
         .pipe(concat('vendor.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/libs'));
-});
-
-
-//browser-sync
-/*gulp.task('serve', function() {
-  browserSync.init({
-      server: {
-          baseDir: "public/"
-      }
-  });
-});*/
-gulp.task('serve', function() {
-    browserSync.init({
-        server: "public"
-    });    gulp.watch("./public/*.html").on('change', browserSync.reload);
 });
 
 //twig
@@ -92,13 +83,19 @@ gulp.task('compile', function () {
         .pipe(gulp.dest('public/'));
 });
 
+gulp.task('serve', function() {
+    browserSync.init({
+        server: "public"
+    });    
+    gulp.watch("./public/*.html").on('change', browserSync.reload);
+    gulp.watch("./public/**/.css").on('change', browserSync.reload);
+});
 
 //WATCH
 gulp.task('watch', function() {
-    gulp.watch('frontend/style/*.scss', ['sass', 'serve']);
+    gulp.watch('frontend/style/**/*.scss', ['sass']);
     gulp.watch('view/*.twig', ['compile']);
     gulp.watch('frontend/js/*.js', ['js']);
-    gulp.watch('public/*.html', ['serve']);
 });
 
 gulp.task('default', ['sass', 'image', 'compile', 'main-bower-files', 'js', 'font', 'serve', 'watch']);

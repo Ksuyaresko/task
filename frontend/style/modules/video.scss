@@ -1,0 +1,17 @@
+.video {
+position: relative;
+}
+
+#controls span {
+    display:block;
+}
+#playpause {
+    background:url(../images/play.png) no-repeat;
+    width:172px;
+    height: 172px;
+    position: absolute;
+    left: calc(50% - 86px);
+    top: calc(50% - 86px);
+    text-indent: -9999px;
+    overflow: hidden;
+}

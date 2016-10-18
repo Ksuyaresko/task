@@ -2,19 +2,19 @@
 {% extends "layout.twig" %}
  
 {% block page %}
-<header>
-   <div class="header wrapper">
+<header id="header">
+           <div class="header">
       <div class="header__left">
          <p>
             <span class="header__left_price">Price</span>
             <span class="header__left_suggest">$suggester</span>
          </p>
-      </div>
+          </div>
       <div class="header__right">
          <span>Easy. Instant. Smart</span>
       </div>
    </div>
-   <div class="promo wrapper">
+       <div class="promo">
       <div class="promo__left">
          <div class="promo__left_box promoAnimation">
             <div class="promoAnimation__top">
@@ -111,10 +111,13 @@
     </div>
 </div>
 
-<div class="wrapper video">
-    <video width="100%" controls>
-    <source src="movie.mp4" type="video/mp4">
+<div class="video">
+    <video id="myvideo" width="100%" height="auto" poster="images/video.jpg">
+        <source src="video/NeverStop.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
     </video>
+    <div id="controls">
+    <span id="playpause" class="paused"></span>
+    </div>
 </div>
 
 <div class="stores wrapper">
@@ -131,22 +134,23 @@
         <div class="stores__big stores__big_third">
             <a href="#" class="stores__link "><img src="images/target.png"></a>
         </div>
+        
+                <div class="stores__big stores__big_fourth">
+            <a href="#" class="stores__link "><img src="images/toysLarge.png"></a>
+        </div>
+        
     </div>
     
     <div class="stores__second">
-        <div class="stores__small"><a href="#" class="stores__link "><img src="images/toys.png"></a></div>
+        <div class="stores__small stores__small_first"><a href="#" class="stores__link "><img src="images/toys.png"></a></div>
         
-        <div class="stores__small "><a href="#" class="stores__link "><img src="images/sears.png"></a></div>
+        <div class="stores__small"><a href="#" class="stores__link "><img src="images/sears.png"></a></div>
         
         <div class="stores__small"><a href="#" class="stores__link "><img src="images/ace.png"></a></div>
         
         <div class="stores__small"><a href="#" class="stores__link "><img src="images/walmart.png"></a></div>
         
-        <div class="stores__small stores__small_last"><a href="#" class="stores__link "><img src="images/barnes.png"></a></div>
-    
-    </div>
-    
-    <div class="stores__third">
+        <div class="stores__small"><a href="#" class="stores__link "><img src="images/barnes.png"></a></div>
         <div class="stores__small"><a href="#" class="stores__link "><img src="images/jcp.png"></a></div>
         
         <div class="stores__small "><a href="#" class="stores__link "><img src="images/bestbuy.png"></a></div>
@@ -155,14 +159,15 @@
         
         <div class="stores__small"><a href="#" class="stores__link "><img src="images/mayces.png"></a></div>
         
-        <div class="stores__small stores__small_last"><a href="#" class="stores__link "><img src="images/hcn.png"></a></div>
+        <div class="stores__small"><a href="#" class="stores__link "><img src="images/hcn.png"></a></div>
     </div>
     
     <div class="stores__seeall">
     <a class="stores__seeall_link" href="#">See all stores</a></div>
 
 </div>
-<div class="feedback wrapper">
+<div class="feedback">
+    <div class="wrapper gradient">
     <div class="feedback__static rating">
     <h3 class="rating__title">Why people choose us</h3>
         <img class="rating__img" src="images/rating.png">
@@ -175,7 +180,7 @@
             <img src="images/photo.jpg" alt="photo">
             </div>
             
-            <div>
+            <div class="slide__q">
             <img class="slide__q" src="images/q.png"></div>
             <div class="slide__feedback">
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.s</p>
@@ -208,24 +213,29 @@
             </div>
         </div>
         
-                <div class="slide">
-        <p class="slide__name">Boris Grebenschikov</p>
-            <div class="slide__photo">
-            <img src="images/photo.jpg" alt="photo">
-            </div>
-            
-            <div>
-            <img class="slide__q" src="images/q.png"></div>
-            <div class="slide__feedback">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.s</p>
-            </div>
-        </div>
-        
     </div>
-</div>
+        </div>
+</div><!--feedback-->
+
 <div class="now">
     <h4 class="now__title">Don't waste your time!</h4>
     <h4 class="now__title">Start shopping easily with Price Suggester right now</h4>
-    <div class="now__button"><a href="#"><img src="images/g.png"></a></div>
+    <a class="promoButton nowButton"href="#">
+            <img src="images/g.png" alt="" class="promoButton__img nowButton">
+            <p class="nowButton__text_first">Get Price Suggester</p>
+            <p class="nowButton__text_second">for Google Chrome</p>
+        </a>
 </div>
+
+<footer id="footer">
+<div class="fotter__left">
+    <p class="copyright">AdTrustMedia, LLC. 2016. All rights reserved. All trademarks displayed on this web site are the exclusive property of the respective holders.</p>
+    <a href="#" class="fotter__link">Terms  Conditions</a><br>
+    <a href="#" class="fotter__link">Privacy Policy</a>
+    </div>
+    <div class="footer__feedback">
+    <h5 class="feedback__title">Have a questions or a suggestions</h5>
+        <a href="#" class="btn_feedback">send feedback</a>
+    </div>
+</footer>
 {% endblock %}
