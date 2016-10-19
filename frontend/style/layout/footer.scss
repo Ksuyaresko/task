@@ -1,34 +1,46 @@
 #footer {
     border-top: 1px solid $lightblue;
     display: flex;
-    max-width: 1012px;
+    max-width: 1020px;
+    width: 100%;
     margin: auto;
-    padding: 50px 0 100px 0;
+    padding: 36px 0 50px 0;
 }
 .copyright {
     opacity: 0.6;
-    margin: 0 0 20px 0;
+    margin: 0 0 24px 0;
 }
 .fotter__left {
-    flex-basis: 50%;
+    flex-basis: 390px;
+    flex-grow: 0;
+    margin: 0 0 0 -85px;
+    font-size: 12px;
+    line-height: 1.6;
 }
 .feedback__title {
-    margin: 0 0 50px 0;
+    margin: 0 0 36px 0;
     font-size: 24px;
 }
 .btn_feedback {
     font-size: 20px;
     display: inline-block;
-    padding: 20px;
+    padding: 24px 35px 19px 22px;
+    margin: 0 0 0 6px;
     color: $lightblue;
     border: 1px solid $lightblue;
     border-radius: 5px;
     text-transform: uppercase;
+    
 }
 .fotter__link {
     color: $blue;
     display: inline-block;
-    margin: 0 0 10px 0;
+    margin: 0 0 11px 0;
+}
+.footer__feedback {
+    flex-basis: 500px;
+    flex-grow: 0;
+    margin: 0 0 0 200px;
 }
 
 @media (max-width:640px) {

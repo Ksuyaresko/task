@@ -1,28 +1,38 @@
 #header {
-    background: linear-gradient(to right, #3283c1 0, #3283c1 30%, #e2ecf6 30%, #e2ecf6 100%);
+    background: linear-gradient(to right, #3283c1 0, #3283c1 36%, #e2ecf6 36%, #e2ecf6 100%);
     height: 100vh;
+    min-height: 650px;
     display: flex;
     flex-direction: column;
 }
 .header {
     z-index: 1;
     display: flex;
-    justify-content: space-between;
-    max-width: 1012px;
+    align-self: stretch;
+    justify-content: space-around;
+    max-width: 1020px;
+    margin: 0;
 }
 .header__right {
     font-size: 14px;
     opacity: 0.6;
     padding: 55px 0 10px 0;
     align-self: flex-end;
+    white-space: nowrap;
+    flex-basis: 600px;
+    flex-grow: 0;
+    text-align: right;
 }
 
 .header__left {
     color: #fff;
     font-family: Symbola;
+    white-space: nowrap;
     font-size: 20px;
     padding: 49px 0px 0px 10px;
     align-self: flex-start;
+    flex-basis: 600px;
+    flex-grow: 0;
     }
 
 .header__left_price {
@@ -38,6 +48,7 @@
         1px -1px 1px $blue,
         0px -1px 1px $blue;
 }
+
 .header__left_suggest {
     background: $green;
     display: inline-block;
@@ -60,15 +71,17 @@
     position: relative;
     perspective: 1000px;
     min-width: 600px;
+    margin-top: -92px;
 }
 .promo__left_box {
     background: #fff;
     border-radius: 10px;
     position: relative;
-    width: 400px;
+    width: 379px;
     transform-style: preserve-3d;
     position: absolute;
     transform-origin: -100px;
+    padding: 0 0 32px 0;
 }
 .promoAnimation {
     animation: Promo 1s, Promo2 1s 1s, Promo3 1s 2s forwards;
@@ -84,7 +97,10 @@
     position: relative;
 }
 .promoAnimation__img {
-    margin: 30px 0 0 -50px;
+    margin: 38px 0 0 -47px;
+}
+.promoImg {
+    margin: 0 0 0 -47px;
 }
 .promoAnimation__top {
     position: absolute;
@@ -98,10 +114,13 @@
 
 .promoAnimation__top_suggested {
     display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
     transform: rotate(45deg);
-    transform-origin: 40% 310%;
+    transform-origin: 49% 304%;
     background: $green;
-    padding: 3px 50px;
+    padding: 8px 50px;
     color: #fff;
     border-right: 1px solid $green;
     border-left: 1px solid $green;
@@ -110,59 +129,111 @@
 .promoAnimation__bottom {
     display: flex;
     justify-content: space-around;
+    font-size: 14px;
+    font-weight: bold;
+    margin: -7px 0 0 0;
 }
 .aminationBottom__left{
     text-transform: uppercase;
     color: $green;
+    margin-left: 6px;
 }
 .aminationBottom__left_item {
     color: #000;
+    margin: 3px 0 0 0;
 }
 .aminationBottom__right {
-    width: 100px;
-    border: solid 1px #d6e3f1;
-    border-radius: 15px;
+    width: 125px;
+    height: 31px;
+    margin: -4px 1px 0 -15px;
+    border: solid 2px #d6e3f1;
+    border-radius: 70px;
     padding: 4px;
     color: $blue;
     font-size: 20px;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+}
+.aminationBottom__right img {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+}
+.aminationBottom__right_red {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    width: 0px;
+    border-bottom: 3px solid $red;
+    transform: rotate(-25deg);
+    transform-origin: left;
+    animation: price 1s forwards;
+}
+.aminationBottom__right_red2 {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    width: 0px;
+    border-bottom: 3px solid $red;
+    transform: rotate(-25deg);
+    transform-origin: left;
+    animation: price 1s 1s forwards;
+}
+.priceAnim {
+    display: inline-block;
+    animation: priceLast 1s 2s;
+}
+.aminationBottom__right {
+    position: relative;
+    text-align: left;
 }
 .aminationBottom__right_price {
-    
+    position: absolute;
+    left: 15px;
+    top: 5px;
 }
+
 .promo__right {
-    padding: 40px 0 30px 0;
-    max-width: 350px;
-    margin: auto;
+    padding: 0px 0 30px 0;
+    max-width: 440px;
+    margin: -43px auto 0 7px;
+    line-height: 1.2;
 }
 .righttext__main {
-    font-size: 30px;
-    margin: 0 0 30px 0;
+    font-size: 36px;
+    margin: 0px 0 19px 0;
 }
 .righttext__small {
     font-size: 16px;
     opacity: 0.6;
     color: #6c6c6c;
-    margin: 0 0 30px 0;
+    margin: 0 0 40px 0;
+    max-width: 285px;
+    line-height: 1.5;
 }
 .promoButton {
     display: block;
     background: $blue;
-    border-radius: 10px;
-    padding: 10px 10px 20px 10px;
-    width: 300px;
+    border-radius: 5px;
+    padding: 19px 10px 20px 10px;
+    width: 313px;
     margin: 0 100px 0 0;
 } 
 .promoButton__img {
-    margin: 0 15px 0 0;
+    margin: -2px 15px 0 9px;
     float: left;
     overflow: hidden;
 }
 .promoButton__text {
     font-size: 14px;
+    opacity: 0.6;
 }
 .promoButton__text_first {
     text-transform: uppercase;
+    font-weight: bold;
     font-size: 20px;
+    margin: 0 0 3px 0;
 }
 
 
@@ -174,21 +245,21 @@
     }
     60% {
         transform: rotateY(0deg);
-        margin-left: 100px;
+        margin-left: 80px;
     }
     100% {
         transform: rotateY(0deg);
-        margin-left: 100px;
+        margin-left: 80px;
     }
 }
 @keyframes Promo2 {
     0% {
         opacity: 1;
-        margin-left: 100px;
+        margin-left: 9px;
     }
     100% {
         opacity: 0.6;
-        margin-left: 60px;
+        margin-left: 9px;
         transform: scale(0.8);
         transform-origin: left;
     }
@@ -203,9 +274,43 @@
     }
     100% {
         opacity: 0.3;
-        margin-left: 30px;
+        margin-left: -40px;
         transform: scale(0.6);
         transform-origin: left;
+    }
+}
+
+@keyframes price {
+    0% {
+        width: 0px;
+    }
+    60% {
+        width: 0px;
+    }
+    100% {
+        width: 55px;
+    }
+}
+@keyframes priceLast {
+    0% {
+        font-size: 20px;;
+        transform: rotate(0deg);
+    }
+    60% {
+        font-size: 20px;;
+        transform: rotate(0deg);
+    }
+    75% {
+        font-size: 30px;
+        transform: rotate(-35deg);
+    }
+    85% {
+        font-size: 30px;
+        transform: rotate(-35deg);
+    }
+    100% {
+        font-size: 20px;
+        transform: rotate(0deg);
     }
 }
 
@@ -230,9 +335,6 @@
     .header__right {
         padding: 15px 0 10px;
         color: #fff;
-    }
-    .promo__left_box {
-        width: 280px;
     }
     .promoAnimation__img {
         width: 330px;

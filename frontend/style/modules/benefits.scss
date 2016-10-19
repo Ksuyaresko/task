@@ -1,10 +1,10 @@
 .benefits {
     background: #fff;
-    padding: 20px 0 80px 0;
+    padding: 20px 0 160px 0;
 }
 .benefits__title {
     font-size: 36px;
-    margin: 0 0 30px 0;
+    margin: 72px 0 120px 0;
     text-align: center;
 }
 .benefits__main {
@@ -15,22 +15,22 @@
     text-align: contain;
 }
 .benefits__img{
-    width: 126px;
-    height: 126px;
-    margin: 0 auto 10px;
+    width: 122px;
+    height: 122px;
+    margin: 0 auto 50px;
     border: 1px solid #c1daec;
     background: url('../images/benefits.png') no-repeat;
     position: relative;
 }
 .benefits__img:before {
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
     position: absolute;
     border-top: 4px solid $blue;
     border-left: 4px solid $blue;
-    top: -5px;
-    left: -5px;
+    top: -4px;
+    left: -4px;
 }
 
 .benefits__img:after {
@@ -40,21 +40,22 @@
     position: absolute;
     border-bottom: 4px solid $blue;
     border-right: 4px solid $blue;
-    bottom: -5px;
-    right: -5px;
+    bottom: -4px;
+    right: -4px;
 }
 
 .benefits__img_first {
-    background-position:0 0;
+    background-position: -7px -2px;
 }
 .benefits__img_second {
-    background-position: -338px 0;
+    background-position: -344px -2px;
 }
 .benefits__img_third {
     background-position: -679px 0;
 }
 .benefits__text {
     font-size: 18px;
-    max-width: 200px;
+    line-height: 1.8;
+    max-width: 250px;
     text-align: center;
 }

@@ -3,7 +3,7 @@
  
 {% block page %}
 <header id="header">
-           <div class="header">
+    <div class="header wrapper">
       <div class="header__left">
          <p>
             <span class="header__left_price">Price</span>
@@ -13,7 +13,7 @@
       <div class="header__right">
          <span>Easy. Instant. Smart</span>
       </div>
-   </div>
+        </div>
        <div class="promo">
       <div class="promo__left">
          <div class="promo__left_box promoAnimation">
@@ -29,30 +29,14 @@
                </div>
                <div class="aminationBottom__right">
                   <span class="aminationBottom__right_price">$213</span>
+                   <div class="aminationBottom__right_red"></div>
                   <img src="images/tray.png" alt="">
                </div>
             </div>
          </div>
          <!--end promoAnimation-->
+          
          <div class="promo__left_box promoAnimation2">
-            <div class="promoAnimation__top">
-               <span class="promoAnimation__top_suggested">suggested</span>
-            </div>
-            <img class="promoAnimation__img" src="images/2.png" alt="">
-            <img class="promoImg" src="images/shadow.png" alt="">
-            <div class="promoAnimation__bottom aminationBottom">
-               <div class="aminationBottom__left">
-                  <p>best price for</p>
-                  <p class="aminationBottom__left_item">sneakers</p>
-               </div>
-               <div class="aminationBottom__right">
-                  <span class="aminationBottom__right_price">$213</span>
-                  <img src="images/tray.png" alt="">
-               </div>
-            </div>
-         </div>
-         <!--end promoAnimation2-->
-         <div class="promo__left_box promoAnimation3">
             <div class="promoAnimation__top">
                <span class="promoAnimation__top_suggested">suggested</span>
             </div>
@@ -65,11 +49,32 @@
                </div>
                <div class="aminationBottom__right">
                   <span class="aminationBottom__right_price">$213</span>
+                   <div class="aminationBottom__right_red2"></div>
+                  <img src="images/tray.png" alt="">
+               </div>
+            </div>
+         </div>
+         <!--end promoAnimation2-->
+          
+         <div class="promo__left_box promoAnimation3">
+            <div class="promoAnimation__top">
+               <span class="promoAnimation__top_suggested">suggested</span>
+            </div>
+            <img class="promoAnimation__img" src="images/1.png" alt="">
+            <img class="promoImg" src="images/shadow.png" alt="">
+            <div class="promoAnimation__bottom aminationBottom">
+               <div class="aminationBottom__left">
+                  <p>best price for</p>
+                  <p class="aminationBottom__left_item">sneakers</p>
+               </div>
+               <div class="aminationBottom__right">
+                  <span class="aminationBottom__right_price priceAnim">$213</span>
                   <img src="images/tray.png" alt="">
                </div>
             </div>
          </div>
          <!--end promoAnimation3-->
+          
       </div>
       <!--End promo__left--->
       <div class="promo__right righttext">
@@ -98,14 +103,14 @@
                 <div class="benefits__item">
             <div class="benefits__img benefits__img_second"></div>
             <div class="benefits__text">
-            <p>We will find the lowest prices for you</p>
+            <p>Comparison of prices among 1000+ sellers</p>
             </div>
         </div>
         
                 <div class="benefits__item">
             <div class="benefits__img benefits__img_third"></div>
             <div class="benefits__text">
-            <p>We will find the lowest prices for you</p>
+            <p>Global supporting and requires no configuration</p>
             </div>
         </div>
     </div>
@@ -118,6 +123,7 @@
     <div id="controls">
     <span id="playpause" class="paused"></span>
     </div>
+    <div class="howWorkes">See how it workes</div>
 </div>
 
 <div class="stores wrapper">
@@ -163,7 +169,7 @@
     </div>
     
     <div class="stores__seeall">
-    <a class="stores__seeall_link" href="#">See all stores</a></div>
+    <a class="stores__seeall_link" href="#">See all stores <i class="fa fa-chevron-down" aria-hidden="true"></i></a></div>
 
 </div>
 <div class="feedback">
@@ -187,7 +193,7 @@
             </div>
         </div>
       
-                <div class="slide">
+            <div class="slide">
         <p class="slide__name">Boris Grebenschikov</p>
             <div class="slide__photo">
             <img src="images/photo.jpg" alt="photo">
@@ -218,10 +224,10 @@
 </div><!--feedback-->
 
 <div class="now">
-    <h4 class="now__title">Don't waste your time!</h4>
-    <h4 class="now__title">Start shopping easily with Price Suggester right now</h4>
+    <h4 class="now__title">Don't waste your time!<br>
+        Start shopping easily with Price Suggester right now</h4>
     <a class="promoButton nowButton"href="#">
-            <img src="images/g.png" alt="" class="promoButton__img nowButton">
+            <img src="images/g.png" alt="" class="nowButton__img">
             <p class="nowButton__text_first">Get Price Suggester</p>
             <p class="nowButton__text_second">for Google Chrome</p>
         </a>

@@ -98,4 +98,4 @@ gulp.task('watch', function() {
     gulp.watch('frontend/js/*.js', ['js']);
 });
 
-gulp.task('default', ['sass', 'image', 'compile', 'main-bower-files', 'js', 'font', 'serve', 'watch']);
+gulp.task('default', ['sass', 'image', 'compile', 'main-bower-files', 'js', 'font', 'video', 'serve', 'watch']);
