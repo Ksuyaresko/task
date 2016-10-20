@@ -18,7 +18,7 @@ var gulp = require('gulp'),
 
 //CSS
 gulp.task('sass', function(){
-  gulp.src('frontend/style/index.scss')
+  gulp.src('frontend/style/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -69,7 +69,7 @@ gulp.task('main-bower-files', function() {
 
 //twig
 gulp.task('compile', function () {
-    return gulp.src('view/index.twig')
+    return gulp.src('view/*.twig')
         .pipe(twig({
             data: {
                 title: 'Gulp and Twig',
@@ -94,7 +94,7 @@ gulp.task('serve', function() {
 //WATCH
 gulp.task('watch', function() {
     gulp.watch('frontend/style/**/*.scss', ['sass']);
-    gulp.watch('view/*.twig', ['compile']);
+    gulp.watch('view/**/*.twig', ['compile']);
     gulp.watch('frontend/js/*.js', ['js']);
 });
 

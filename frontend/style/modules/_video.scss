@@ -1,0 +1,61 @@
+.video {
+position: relative;
+}
+#myvideo {
+    position: relative;
+}
+
+#controls span {
+    //display:block;
+}
+#playpause {
+
+}
+.paused {
+    background: $blue url(../images/play.png) no-repeat;
+    width:180px;
+    height: 180px;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 81px);
+    top: calc(50% - 81px);
+    overflow: hidden;
+}
+.paused:hover {
+    background: $darkblue url(../images/play.png) no-repeat;
+}
+
+.plays {
+    width:100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.howWorks {
+    color: #fff;
+    font-size: 36px;
+    position: absolute;
+    top: calc(50% + 115px);
+    left: calc(50% - 156px);
+}
+.invisible {
+    display: none;
+}
+
+@media (max-width:1024px) {
+    .paused {
+    left: calc(50% - 90px);
+    top: calc(50% - 120px);
+    }
+    .howWorks {
+    font-size: 28px;
+    top: calc(50% + 100px);
+    left: calc(50% - 119px);
+}
+}

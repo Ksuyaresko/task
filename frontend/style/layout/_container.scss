@@ -7,3 +7,8 @@
 .gradient {
         background: linear-gradient(to right, #3283c1 0px, #3283c1 254px, #e2ecf6 254px, #e2ecf6 1012px);
 }
+@media (max-width:1024px) {
+    .wrapper {
+    max-width: 1009px;
+    }
+}

@@ -1,8 +1,7 @@
 #footer {
     border-top: 1px solid $lightblue;
     display: flex;
-    max-width: 1020px;
-    width: 100%;
+    max-width: 1190px;
     margin: auto;
     padding: 36px 0 50px 0;
 }
@@ -13,7 +12,7 @@
 .fotter__left {
     flex-basis: 390px;
     flex-grow: 0;
-    margin: 0 0 0 -85px;
+    margin: 0 0 0 0;
     font-size: 12px;
     line-height: 1.6;
 }
@@ -29,9 +28,13 @@
     color: $lightblue;
     border: 1px solid $lightblue;
     border-radius: 5px;
-    text-transform: uppercase;
-    
+    text-transform: uppercase; 
 }
+
+.btn_feedback:hover {
+    background: $lightblue;
+    color: $blue;
+} 
 .fotter__link {
     color: $blue;
     display: inline-block;
@@ -43,16 +46,42 @@
     margin: 0 0 0 200px;
 }
 
-@media (max-width:640px) {
+@media (max-width:1024px) {
+    #footer {
+        max-width: 892px;
+    }
+    .feedback__title {
+        font-size: 18px;
+        margin: 0 0 27px;
+    }
+    .btn_feedback {
+        font-size: 16px;
+    }
+    .footer__feedback {
+    margin: 0 0 0 95px;
+}
+    .btn_feedback {
+    padding: 21px 29px 14px 20px;
+    margin: 0 0 0 2px;
+    }
+}
+@media (max-width:710px) {
     #footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 18px 2em 3.125em;
     }
     .footer__feedback {
         order: -1;
+        flex-basis: auto;
+        margin: 0 auto;
+    }
+    .fotter__left {
+        flex-basis: auto;
+        margin: 0 auto;
     }
     .btn_feedback {
-        margin: 0 auto 30px; 
+        margin: 0 auto 2em; 
     }
 }

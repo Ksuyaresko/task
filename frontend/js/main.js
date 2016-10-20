@@ -8,7 +8,7 @@
     });
 
 //video//
-$(document).ready(function(){
+$(function(){
     var controls = {
         video: $("#myvideo"),
         playpause: $("#playpause")                 
@@ -19,15 +19,44 @@ $(document).ready(function(){
     controls.playpause.click(function(){
         if (video.paused) {
             video.play();
-            $(this).text("Pause");    
+            $(this).addClass("plays"); 
+            $(this).removeClass("paused");
         } else {
             video.pause();
-            $(this).text("Play");
-        }
-                
-        $(this).toggleClass("paused"); 
+            $(this).addClass("paused");
+            $(this).removeClass("plays");
+        }       
     });
+    
+});
+    
+$(function () {
+   $("#playpause").click(function () {
+   $(".howWorks").toggleClass("invisible");
+   });
+});
 
+//PopUpForm
+$(document).ready(function() {
+	$('#formBtn').click( function(event){
+		event.preventDefault(); 
+		$('#overlay').fadeIn(400, 
+		 	function(){ 
+				$('#popupForm') 
+					.css('display', 'block') // 
+					.animate({opacity: 1, top: '50%'}, 200); 
+		});
+	});
+	
+	$('#overlay, #close, #cancel').click( function(){ 
+		$('#popupForm')
+			.animate({opacity: 0, top: '45%'}, 200,  
+				function(){
+					$(this).css('display', 'none'); 
+					$('#overlay').fadeOut(400);
+				}
+			);
+	});
 });
 
 
