@@ -9,7 +9,7 @@ position: relative;
     //display:block;
 }
 #playpause {
-
+    z-index: 2;
 }
 .paused {
     background: $blue url(../images/play.png) no-repeat;
@@ -43,9 +43,20 @@ position: relative;
     position: absolute;
     top: calc(50% + 115px);
     left: calc(50% - 156px);
+    z-index: 2;
 }
 .invisible {
     display: none;
+}
+.video__overlay {
+    background: url(../images/video.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
 @media (max-width:1024px) {
@@ -58,4 +69,16 @@ position: relative;
     top: calc(50% + 100px);
     left: calc(50% - 119px);
 }
+}
+@media (max-width:710px) {
+    .paused {
+    width:6.25em;
+    height: 6.25em;
+    background-size: cover;
+    background-position: 0.125em 0.125em;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 3.125em);
+    top: calc(50% - 3.125em);
+    }
 }

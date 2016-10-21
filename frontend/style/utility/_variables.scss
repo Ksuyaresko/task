@@ -3,3 +3,10 @@ $lightblue: #bfd7eb;
 $green: #66b44a;
 $red: #e63d42;
 $darkblue: #055b9d;
+
+@mixin border-r {
+    border-right: 1px solid $lightblue;
+}
+@mixin border-b {
+   border-bottom: 1px solid $lightblue;
+}

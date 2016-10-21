@@ -33,8 +33,10 @@ $(function(){
 $(function () {
    $("#playpause").click(function () {
    $(".howWorks").toggleClass("invisible");
+       $(".video__overlay").toggleClass("invisible");
    });
 });
+
 
 //PopUpForm
 $(document).ready(function() {

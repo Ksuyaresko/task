@@ -84,3 +84,10 @@
     }
 
 }
+
+@media (max-width:640px) {
+    h2.benefits__title {
+    font-size: 2.5em;
+        margin: 2.125em 0 5.125em;
+}
+}

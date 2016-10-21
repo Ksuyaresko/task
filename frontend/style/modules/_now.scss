@@ -61,6 +61,28 @@
 @media (max-width:710px) {
     .now {
         font-size: 2.5em;
-        padding: 4.25em 2em 2em;
+        padding: 1.5em 1em 2em;
+        line-height: 1.5;
     }
+    .now__title_first {
+        margin-bottom: 0.4em;
+    }
+    .nowButton {
+        width: auto;
+        max-width: 20em;
+        margin: 0 0.8em;
+        padding: 8px 10px 16px;
+    }
+    .nowButton__img {
+    margin: 16px -15px 0 9px;
+}
+    .nowButton__text_first {
+        font-size: 28px;
+        margin: 7px 0 -7px 84px;
+    }
+    .nowButton__text_second {
+        font-size: 20px;
+        margin: 0 0 0 85px;
+    }
+
 }
