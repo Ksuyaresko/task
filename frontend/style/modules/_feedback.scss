@@ -206,10 +206,6 @@
 }
 }
 
-
-
-
-
 @media (max-width:710px) {
     .slide__box {
         flex-flow: column;
@@ -288,3 +284,33 @@
     }
 
 }
+
+@media (max-width:600px) {
+    .feedback {
+    font-size: 0.8em;
+    }
+    .slide__left {
+    min-height: 320px;
+}
+}
+@media (max-width:450px) {
+        .feedback {
+    font-size: 0.6em;
+    }
+    .slide__left {
+    min-height: 245px;
+        flex-basis: 245px;
+}
+    .slider__right  {
+    padding: 17em 2em 9em;
+}
+.slide__feedback {
+    padding: 0 1em;
+}
+}
+
+@media (max-width:360px) {
+    .slider__right {
+    padding: 15em 1em 8em;
+}
+} 

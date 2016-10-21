@@ -74,11 +74,47 @@ position: relative;
     .paused {
     width:6.25em;
     height: 6.25em;
-    background-size: cover;
     background-position: 0.125em 0.125em;
+    background-size: 6.25em 6.25em;
     border-radius: 50%;
     position: absolute;
     left: calc(50% - 3.125em);
     top: calc(50% - 3.125em);
     }
+    .paused:hover {
+    background-size: 6.25em 6.25em;
+    left: calc(50% - 3.125em);
+    top: calc(50% - 3.125em);
+    }
+}
+
+@media (max-width:500px) {
+    .paused {
+        top: calc(50% - 5em);
+    }
+    .howWorks {
+    font-size: 16px;
+    top: calc(50% + 45px);
+    top: calc(50% + 45px);
+    left: calc(50% - 70px);
+}
+}
+@media (max-width:400px) {
+    .paused {
+    width: 4.25em;
+    height: 4.25em;
+    background-size: 4.25em 4.25em;
+    left: calc(50% - 2.125em);
+    top: calc(50% - 4em);
+}
+    .paused:hover {
+    background-size: 4.25em 4.25em;
+    left: calc(50% - 2.125em);
+    top: calc(50% - 4em);
+}
+    .howWorks {
+    font-size: 14px;
+    top: calc(50% + 28px);
+    left: calc(50% - 60px);
+}
 }
