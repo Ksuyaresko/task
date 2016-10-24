@@ -62,9 +62,8 @@ gulp.task('video', function() {
 gulp.task('main-bower-files', function() {
     return gulp.src('./bower.json')
         .pipe(mainBowerFiles('**/*.js'))
-        .pipe(concat('vendor.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('public/libs'));
+        .pipe(gulp.dest('public/js/libs'));
 });
 
 //twig

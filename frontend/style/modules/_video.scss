@@ -90,7 +90,10 @@ position: relative;
 
 @media (max-width:500px) {
     .paused {
-        top: calc(50% - 5em);
+        top: calc(50% - 80px);
+    }
+    .paused:hover {
+        top: calc(50% - 80px);
     }
     .howWorks {
     font-size: 16px;
