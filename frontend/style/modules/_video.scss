@@ -79,30 +79,20 @@ position: relative;
     border-radius: 50%;
     position: absolute;
     left: calc(50% - 3.125em);
-    top: calc(50% - 3.125em);
+    top: calc(50% - 6em);
     }
     .paused:hover {
     background-size: 6.25em 6.25em;
     left: calc(50% - 3.125em);
-    top: calc(50% - 3.125em);
+    top: calc(50% - 6em);
     }
+    .howWorks {
+    top: calc(50% + 30px);
+    left: calc(50% - 119px);
+}
 }
 
 @media (max-width:500px) {
-    .paused {
-        top: calc(50% - 80px);
-    }
-    .paused:hover {
-        top: calc(50% - 80px);
-    }
-    .howWorks {
-    font-size: 16px;
-    top: calc(50% + 45px);
-    top: calc(50% + 45px);
-    left: calc(50% - 70px);
-}
-}
-@media (max-width:400px) {
     .paused {
     width: 4.25em;
     height: 4.25em;
