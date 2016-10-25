@@ -13,7 +13,11 @@ var gulp = require('gulp'),
     gulpFilter = require('gulp-filter'),
     browserSync = require('browser-sync').create(),
     twig = require('gulp-twig'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    data = require('gulp-data'),
+    path = require('path'),
+    semver = require('semver'),
+    fs = require('fs');
 
 
 //CSS
@@ -67,34 +71,45 @@ gulp.task('main-bower-files', function() {
 });
 
 //twig
-gulp.task('compile', function () {
+/*gulp.task('twig', function () {    
+return gulp.src('view/*.twig')
+.pipe(data(function(file) {
+return require('./fixtures/' + path.basename(file.path, '.twig') + '.json');    
+}))
+.pipe(twig())
+.pipe(gulp.dest('public/'));    
+});*/
+
+var getJsonData = function(file) {
+    var fileName = path.basename(file.path, '.twig');
+    return JSON.parse(fs.readFileSync('./fixtures/' + fileName + '.json'));
+};
+
+gulp.task('twig', function() {
+
+    var twig = require('gulp-twig');
     return gulp.src('view/*.twig')
-        .pipe(twig({
-            data: {
-                title: 'Gulp and Twig',
-                benefits: [
-                    'Fast',
-                    'Flexible',
-                    'Secure'
-                ]
-            }
-        }))
-        .pipe(gulp.dest('public/'));
+        .pipe(data(getJsonData))
+        .pipe(twig())
+        .pipe(gulp.dest('public'));
+
 });
 
+
+
+//Server
 gulp.task('serve', function() {
     browserSync.init({
         server: "public"
     });    
-    gulp.watch("./public/*.html").on('change', browserSync.reload);
-    gulp.watch("./public/**/.css").on('change', browserSync.reload);
+    gulp.watch(['./public/*.html', './public/style/*.css']).on('change', browserSync.reload);
 });
 
 //WATCH
 gulp.task('watch', function() {
     gulp.watch('frontend/style/**/*.scss', ['sass']);
-    gulp.watch('view/**/*.twig', ['compile']);
+    gulp.watch(['view/**/*.twig', 'fixtures/*.json'], ['twig']);
     gulp.watch('frontend/js/*.js', ['js']);
 });
 
-gulp.task('default', ['sass', 'image', 'compile', 'main-bower-files', 'js', 'font', 'video', 'serve', 'watch']);
+gulp.task('default', ['sass', 'image', 'twig', 'main-bower-files', 'js', 'font', 'video', 'serve', 'watch']);

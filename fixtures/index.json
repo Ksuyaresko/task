@@ -1,0 +1,13 @@
+{
+"title": "Letzgro Web and Mobile Development",
+"hire_lezgro": "hire Letzgro",
+"top_menu":[
+{"name": "about", "link": "about", "sub": null},
+{"name": "services", "link": "services", "sub": null},
+{"name": "cloud", "link": "cloud", "sub": null},
+{"name": "mobile", "link": "mobile","sub": null},
+{"name": "portfolios", "link": "portfolios", "sub": null},
+{"name": "blog", "link": "blog","sub": null},
+{"name": "careers", "link": "careers","sub": null}
+]
+}

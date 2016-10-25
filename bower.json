@@ -14,9 +14,13 @@
   "dependencies": {
     "jquery": "^3.1.1",
     "normalize-css": "normalize.css#^5.0.0",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "domready": "^1.0.7"
   },
   "authors": [
     "“Ksuyaresko” <Kiaresko@gmail.com>"
-  ]
+  ],
+  "devDependencies": {
+    "domready": "^1.0.8"
+  }
 }

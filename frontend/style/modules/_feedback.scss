@@ -29,11 +29,14 @@
 .slick-dots {
     display: flex;
     position: absolute;
+}
+.feedback .slick-dots {
     left: 850px;
     bottom: 85px;
     margin: 0;
     padding: 0;
 }
+
 .slick-dots button {
     display: block;
     width: 7px;
@@ -175,7 +178,7 @@
         transform: scale(0.75);
         transform-origin: bottom;
 }
-    .slick-dots {
+.feedback .slick-dots {
         left: 650px;
         border: 60px;
     }
@@ -205,9 +208,6 @@
     .slick-next {
     left: 295px;
     }
-    .slick-dots {
-    left: 550px;
-}
 }
 
 @media (max-width:820px) {
@@ -279,7 +279,7 @@
         font-size: 1.5em;
         line-height: 1.5;
     }
-    .slick-dots {
+   .feedback .slick-dots {
         left: calc(50% - 30px);
         bottom: 4.5em;
     }
