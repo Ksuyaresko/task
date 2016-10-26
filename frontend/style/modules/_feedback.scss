@@ -1,29 +1,25 @@
 .feedback {
     background: linear-gradient(to right, $blue 0%, $blue 50%, $lightblue 50%, $lightblue 100%);
     position: relative;
-    @include bp (600px) {
+    @include bp ($tabletsmall) {
         font-size: 0.8em;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         font-size: 0.5em;
     }
-}
-.feedback__static {
+
+&__static {
     position: absolute;
     top: 93px;
     left: 84px;
     max-width: 300px;
     z-index: 20;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         top: 79px;
         left: 63px;
         max-width: 267px;
     }
-    @include bp (800px) {
-        top: 55px;
-        left: 40px;
-    }
-    @include bp (830px) {
+    @include bp ($tablet) {
         top: 3.6em;
         left: 0;
         right: 0;
@@ -32,62 +28,195 @@
         max-width: 100%;
     }
 }
-.rating__title {
+}
+
+.rating {
+&__title {
     color: #fff;
     font-size: 36px;
     margin: 0 0 48px 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         font-size: 28px;
         margin: 0 0 80px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         font-size: 2.5em;
         margin: 0 0 1.5em;
     }
 }
-.rating__img {
+&__img {
     margin: 0 0 10px 0;
+    width: 127px;
+    height: 19px;
 }
-.rating__img {
-    width: 12em;
-    height: 2em;
-}
-.rating__text {
+&__text {
     font-size: 12px;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         max-width: 100px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         max-width: 100%;
         font-size: 1.5em;
     }
 }
-.slide__box {
+}
+
+.slide {
+&__box {
     display: flex;
-    @include bp (830px) {
+    @include bp ($tablet) {
         flex-flow: column;
     }
 }
-.slick-dots {
+&__left {
+    background: $blue;
     display: flex;
-    position: absolute;
+    position: relative;
+    flex-basis: 425px;
+    flex-shrink: 0;
+    min-height: 645px;
+    @include bp ($desktop) {
+        flex-basis: 352px;
+        min-height: 600px;
+    }
+    @include bp ($tablet) {
+        order: 1;
+        min-height: 400px;
+    }
+    @include bp ($tabletsmall) {
+        flex-basis: 305px;
+        min-height: 305px;
+    }
+
+    @include bp ($mobile) {
+        min-height: auto;
+        flex-basis: 210px;
+    }
 }
+&__right {
+    background: $lightblue;
+    display: flex;
+    flex-basis: 935px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    @include bp ($tablet) {
+        order: 2;
+        flex-basis: auto;
+        padding: 17em 4em 9em;
+    }
+    @include bp (450px) {
+        padding: 17em 2em 9em;
+    }
+}
+
+&__name {
+    flex-basis: 150px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    align-self: flex-end;
+    margin: 0 3px 128px 85px;
+    @include bp ($desktop) {
+       font-size: 16px;
+        margin: 0 3px 212px 63px; 
+    }
+    @include bp ($tablet) {
+        order: 2;
+        font-size: 1.75em;
+        color: #000;
+        margin: 0 0 2em 0;
+        flex-basis: 100%;
+        text-align: center;
+        transform: translateY(10em);
+    }
+}
+
+&__photo {
+    flex-shrink: 0;
+    width: 215px;
+    height: 215px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    transform: translateX(50%);
+    margin: 207px 0 100px 0;
+    @include bp ($desktop) {
+        margin: 183px 0 100px;
+    }
+    @include bp ($tablet) {
+        margin: 0;
+        order: 1;
+        bottom: 0;
+        width: 16em;
+        height: 16em;
+        transform: translateY(50%);
+        left: calc(50% - 9em);
+    }
+ img {
+    @include bp ($tablet) {
+        width: 16em;
+        height: 16em;
+    }
+}
+    }
+&__q {
+    margin: 122px 0 0 104px;
+    @include bp ($desktop) {
+        margin: 110px 0 0 73px;
+    }
+    @include bp ($tablet) {
+        margin: 0 0 0 10px;
+    }
+ img {
+    @include bp ($tablet) {
+        width: 3em;
+        height: auto;
+    }
+}
+    }
+&__feedback {
+    max-width: 500px;
+    line-height: 2;
+    padding: 237px 10px 10px 15px;
+    @include bp ($desktop) {
+        font-size: 14px;
+        max-width: 430px;
+        line-height: 1.8;
+        padding: 220px 10px 10px 15px;
+    }
+    @include bp ($tablet) {
+        padding: 0em 0.5em;
+        max-width: 100%;
+        font-size: 1.5em;
+        line-height: 1.5;
+    }
+    @include bp (450px) {
+        padding: 0 1em;
+    }
+}
+}
+
 .feedback .slick-dots {
     left: 850px;
     bottom: 85px;
     margin: 0;
     padding: 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         left: 650px;
         border: 60px; 
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         left: calc(50% - 30px);
         bottom: 4.5em;
     }
 }
-
-.slick-dots button {
+.slick {
+&-dots {
+    display: flex;
+    position: absolute;
+ button {
     display: block;
     width: 7px;
     height: 12px;
@@ -98,10 +227,12 @@
     outline: none;
     border: none;
 }
-.slick-active button{
+}
+
+&-active button{
     background: $darkblue;
 }
-.slick-next {
+&-next {
     display: block;
     outline: none;
     border: none;
@@ -114,22 +245,22 @@
     left: 426px;
     bottom: 0;
     z-index: 20;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         left: 342px;
         transform: scale(0.75);
         transform-origin: bottom;
     }
-    @include bp (800px) {
+    @include bp ($tabletsmall) {
         left: 295px;
     }
-        @include bp (830px) {
+        @include bp ($tablet) {
         display: none !important;
     }
 }
-.slick-next:hover {
+&-next:hover {
     background-position: 85px 85px;
 }
-.slick-prev {
+&-prev {
     display: block;
     outline: none;
     border: none;
@@ -142,151 +273,17 @@
     bottom: 0;
     position: absolute;
     z-index: 20;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         left: 278px;
         transform: scale(0.75);
         transform-origin: bottom;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         display: none !important;
     }
     
 }
-.slick-prev:hover {
+&-prev:hover {
     background-position: 0 85px;
 }
-.slide__left {
-    background: $blue;
-    display: flex;
-    position: relative;
-    flex-basis: 425px;
-    flex-shrink: 0;
-    min-height: 645px;
-    @include bp (1024px) {
-        flex-basis: 352px;
-        min-height: 600px;
-    }
-    @include bp (800px) {
-        flex-basis: 305px;
-        min-height: 560px;
-    }
-    @include bp (830px) {
-        order: 1;
-        height: auto;
-        min-height: 412px;
-    }
-    @include bp (600px) {
-        min-height: 320px;
-    }
-    @include bp (500px) {
-        min-height: auto;
-        flex-basis: 210px;
-    }
-}
-.slider__right {
-    background: $lightblue;
-    display: flex;
-    flex-basis: 935px;
-    flex-shrink: 1;
-    flex-grow: 1;
-    @include bp (830px) {
-        order: 2;
-        flex-basis: auto;
-        padding: 17em 4em 9em;
-    }
-    @include bp (450px) {
-        padding: 17em 2em 9em;
-    }
-}
-.slide__name {
-    flex-basis: 150px;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.6;
-    align-self: flex-end;
-    margin: 0 3px 128px 85px;
-    @include bp (1024px) {
-       font-size: 16px;
-        margin: 0 3px 212px 63px; 
-    }
-    @include bp (830px) {
-        order: 2;
-        font-size: 1.75em;
-        color: #000;
-        margin: 0 0 2em 0;
-        flex-basis: 100%;
-        text-align: center;
-        transform: translateY(10em);
-    }
-}
-
-.slide__photo {
-    flex-shrink: 0;
-    width: 215px;
-    height: 215px;
-    border: 10px solid #fff;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    transform: translateX(50%);
-    margin: 207px 0 100px 0;
-    @include bp (1024px) {
-        margin: 183px 0 100px;
-    }
-    @include bp (830px) {
-        margin: 0;
-        order: 1;
-        bottom: 0;
-        width: 16em;
-        height: 16em;
-        transform: translateY(50%);
-        left: calc(50% - 9em);
-    }
-}
-
-.slide__photo img {
-    @include bp (830px) {
-        width: 16em;
-        height: 16em;
-    }
-}
-.slide__q {
-    margin: 122px 0 0 104px;
-    @include bp (1024px) {
-        margin: 110px 0 0 73px;
-    }
-    @include bp (830px) {
-        margin: 0 0 0 10px;
-    }
-}
-.slide__q img {
-    @include bp (830px) {
-        width: 3em;
-        height: auto;
-    }
-}
-.slide__feedback {
-    max-width: 500px;
-    line-height: 2;
-    padding: 237px 10px 10px 15px;
-    @include bp (1024px) {
-        font-size: 14px;
-        max-width: 430px;
-        line-height: 1.8;
-        padding: 220px 10px 10px 15px;
-    }
-    @include bp (830px) {
-        padding: 0em 0.5em;
-        max-width: 100%;
-        font-size: 1.5em;
-        line-height: 1.5;
-    }
-    @include bp (450px) {
-        padding: 0 1em;
-    }
-}
-.rating__img {
-    width: 127px;
-    height: 19px;
 }

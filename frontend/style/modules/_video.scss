@@ -1,14 +1,22 @@
 .video {
-position: relative;
+    position: relative;
     background: $blue;
+    &__overlay {
+    background: url(../images/video.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
+}
+
 #myvideo {
     position: relative;
 }
 
-#controls span {
-    //display:block;
-}
 #playpause {
     z-index: 2;
 }
@@ -21,11 +29,11 @@ position: relative;
     left: calc(50% - 81px);
     top: calc(50% - 81px);
     overflow: hidden;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         left: calc(50% - 90px);
         top: calc(50% - 120px);
     }
-    @include bp (710px) {
+    @include bp ($tablet) {
         width:6.25em;
         height: 6.25em;
         background-position: 0.125em 0.125em;
@@ -35,27 +43,28 @@ position: relative;
         left: calc(50% - 3.125em);
         top: calc(50% - 6em);
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         width: 4.25em;
         height: 4.25em;
         background-size: 4.25em 4.25em;
         left: calc(50% - 2.125em);
         top: calc(50% - 4em);
     }
-}
-.paused:hover {
+    &:hover {
     background: $darkblue url(../images/play.png) no-repeat;
-    @include bp (710px) {
+    @include bp ($tablet) {
         background-size: 6.25em 6.25em;
         left: calc(50% - 3.125em);
         top: calc(50% - 6em);
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         background-size: 4.25em 4.25em;
         left: calc(50% - 2.125em);
         top: calc(50% - 4em);   
     }
 }
+}
+.paused
 
 .plays {
     width:100%;
@@ -76,16 +85,16 @@ position: relative;
     top: calc(50% + 115px);
     left: calc(50% - 156px);
     z-index: 2;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         font-size: 28px;
         top: calc(50% + 100px);
         left: calc(50% - 119px);
     }
-    @include bp (710px) {
+    @include bp ($tablet) {
         top: calc(50% + 30px);
         left: calc(50% - 119px);
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
              font-size: 14px;
     top: calc(50% + 28px);
     left: calc(50% - 60px);
@@ -93,14 +102,4 @@ position: relative;
 }
 .invisible {
     display: none;
-}
-.video__overlay {
-    background: url(../images/video.jpg);
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
 }

@@ -1,12 +1,12 @@
 #header {
     background: linear-gradient(to right, $blue 0%, $blue 50%, $lightblue 50%, $lightblue 100%);
-    @include bp (830px){
+    @include bp ($tablet){
         height: auto;
     }
-    @include bp (620px){
+    @include bp ($tablet){
         font-size: 0.8em;
     }
-    @include bp (500px){
+    @include bp ($mobile){
         font-size: 0.5em;
     }
 }
@@ -18,53 +18,54 @@
     height: 40px;
     text-indent: -9999px;
     overflow: hidden;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         background-size: 140px 36px;
     }
-    @include bp(830px) {
+    @include bp($tablet) {
         width: 185px;
         height: 45px;
         background-size: 185px 45px;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         width: 70px;
         height: 20px;
         background-size: 70px auto;
         }
 }
 
-.header__topRight {
+.header {
+&__topRight {
     font-size: 14px;
     opacity: 0.6;
     text-align: right;
-    @include bp(1024px) {
+    @include bp($desktop) {
         font-size: 12px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         font-size: 1.25em;
         padding: 3.9375em 2.9375em .625em 0;
     }
-    @include bp (620px) {
+    @include bp ($mobile) {
             padding: 0 0.9375em 0 0;
     }
 }
 
-.header__top {
+&__top {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.header__right {
+&__right {
     background: $lightblue;
     flex-grow: 0;
     align-self: flex-end;
     padding: 63px 87px 14px 0;
     text-align: right;
-    @include bp(1024px) {
+    @include bp($desktop) {
         padding: 53px 66px 14px 0;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         padding: 1em 0.5em 0.625em 0;
         color: #fff;
         position: absolute;
@@ -74,31 +75,30 @@
         text-align: center;
         top: 2.5em;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         padding: 1em 0em .625em 0;
     }
 }
     
-.header__left {
+&__left {
     background: $blue;
     min-width: 85px;
     max-width: 350px;
     padding: 51px 0 0 84px;
     margin: 0 0 44px 0;
-    @include bp(1024px) {
+    @include bp($desktop) {
         padding: 43px 0 0 63px;
         margin: 0 0 46px 0;
     }
-    @include bp (830px) {
-        padding: 3em 0 0 4.25em;
+    @include bp ($tablet) {
+        padding: 2em 0 0 2em;
         margin: 0 0 3.5em
     }
-    @include bp (620px) {
-        padding: 2em 0 0 2em;
-    }
-    @include bp (500px) {
+
+    @include bp ($mobile) {
         padding: 3em 0 0 2em;
     }
+}
 }
 
 .promo {
@@ -107,86 +107,88 @@
     width: 100%;
     height: 100vh;
     min-height: 560px;
-    @include bp (830px) {
+    @include bp ($tablet) {
         flex-direction: column;
         height: 100%;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         min-height: auto;
     }
-}
-.promo__left {
+
+&__left {
     background: $blue;
     padding: 0 0 0 0;
     min-width: 250px;
     flex-basis: 380px;
     position: relative;
-    @include bp (1220px) {
+    @include bp ($desktoplarge) {
         flex-basis: 420px;
     }
-    @include bp (1024px) {
+    @include bp ($desktop) {
         flex-basis: 385px;  
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         flex-basis: 320px;
         min-height: 16.875em;
     }
-    @include bp (500px){
+    @include bp ($mobile){
         flex-basis: 160px;
         min-width: auto;
     }
 }
 
-.promo__container {
+&__container {
     position: absolute;
     width: 380px;
     perspective: 500px;
     right: 0;
     top: calc(50% - 140px);
     transform: translateX(50%);
-    @include bp (1024px) {
+    @include bp ($desktop) {
         width: 342px;
     }
-    @include bp (830px) {
-        right: 23%;
+    @include bp ($tablet) {
+        right: 30%;
         top: 148px;
         transform: translateX(0);
         width: 21.375em;
     }
-    @include bp (500px) {
+    @include bp ($tabletsmall) {
+        right: 23%;
+    }
+    @include bp ($mobile) {
         right: 25%;
         top: 75px;
     }
 }
 
-.promo__right {
+&__right {
     background: $lightblue;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    @include bp (830px) {
+    @include bp ($tablet) {
         text-align: center;
         background: $lightblue;
     }
-}
 
-.promo__right_container {
+    &_container {
     padding: 0 0 0 16em;
     max-width: 450px;
     margin: auto auto;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         padding: 4em 1.25em 0 15em;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         max-width: 500px;
         padding: 11.5em 1.25em 5em;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         padding: 9.5em 1.25em 5em;
     }
 }
-
-.promo__left_box {
+    }
+&__left_box {
     background: #fff;
     border-radius: 10px;
     width: 379px;
@@ -194,25 +196,19 @@
     position: absolute;
     transform-origin: -100px;
     padding: 0 0 32px 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         width: 342px;
         padding: 0 0 27px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         width: 21.375em;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         padding: 0 0 13px;
     }
 }
-
-.promoAnimation {
-    animation: Promo 1s, Promo2 1s 1s, Promo3 1s 2s forwards;
-    z-index: 10;
-    position: absolute;
-    right: 32%;
-    top: 0;
 }
+
 .promoAnimation2 {
     animation: Promo 1s 1s backwards, Promo2 1s 2s forwards;
     z-index: 20;
@@ -227,28 +223,36 @@
     top:0;
     right: 0;
 }
-.promoAnimation__img {
+
+
+.promoImg {
+    margin: 0 0 0 -47px;
+    @include bp ($tablet) {
+        width: 20.625em;
+    }
+    @include bp ($mobile) {
+        margin: 0 0 0 -15px;
+    }
+}
+.promoAnimation {
+    animation: Promo 1s, Promo2 1s 1s, Promo3 1s 2s forwards;
+    z-index: 10;
+    position: absolute;
+    right: 32%;
+    top: 0;
+    &__img {
     margin: 38px 0 0 -47px;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         width: 432px;
         margin: 35px 0 0 -42px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         width: 26.6875em;
         margin: 2.125em 0 0 -2.3125em;
     }
 }
 
-.promoImg {
-    margin: 0 0 0 -47px;
-    @include bp (830px) {
-        width: 20.625em;
-    }
-    @include bp (500px) {
-        margin: 0 0 0 -15px;
-    }
-}
-.promoAnimation__top {
+&__top {
     position: absolute;
     width: 200px;
     height: 200px;
@@ -256,13 +260,11 @@
     top: 0px;
     text-align: right;
     overflow: hidden;
-    @include bp (830px) {
+    @include bp ($tablet) {
         width: 9.375em;
         height: 9.375em;
     }
-}
-
-.promoAnimation__top_suggested {
+&_suggested {
     display: inline-block;
     text-transform: uppercase;
     font-size: 13px;
@@ -274,54 +276,55 @@
     color: #fff;
     border-right: 1px solid $green;
     border-left: 1px solid $green;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         font-size: 12px;  
         transform-origin: 51% 310%;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         font-size: 0.75em;
-        transform-origin: 45% 205%;
+        transform-origin: 45% 125%;
     }
-    @include bp (620px) {
-        transform-origin: 42% 122%;
+    @include bp ($mobile) {
+        transform-origin: 40% 0%;
         padding: 4px 50px;
     }
 }
-
-.promoAnimation__bottom {
+    }
+&__bottom {
     display: flex;
     justify-content: space-around;
     font-size: 14px;
     font-weight: bold;
     margin: -7px 0 0 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         margin: -15px 0 0 0;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         margin: 0px;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         font-size: 7px;
     }
 }
-
-.aminationBottom__left {
+}
+.aminationBottom {
+&__left {
     text-transform: uppercase;
     color: $green;
     margin-left: 6px;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         margin-left: 20px;
     }
-    @include bp (620px) {
+    @include bp ($mobile) {
         margin-left: 5px;
     }
-}
 
-.aminationBottom__left_item {
+&_item {
     color: #000;
     margin: 3px 0 0 0;
 }
-.aminationBottom__right {
+    }
+&__right {
     width: 125px;
     height: 31px;
     margin: -4px 1px 0 -15px;
@@ -333,15 +336,15 @@
     position: relative;
     font-size: 24px;
     font-weight: bold;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         width: 109px;
         margin: -4px 13px 0 5px;
     }
-    @include bp (620px) {
+    @include bp ($mobile) {
         width: 100px;
         margin: 0px 2px 0 5px;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         width: 50px;
         height: 10px;
         font-size: 7px;
@@ -350,13 +353,13 @@
         position: absolute;
         right: 16px;
         top: 8px;
-        @include bp (1024px) {
+        @include bp ($desktop) {
             right: 13px;
         }
     }
 }
 
-.aminationBottom__right_red {
+&__right_red {
     position: absolute;
     top: 30px;
     left: 15px;
@@ -365,7 +368,7 @@
     transform: rotate(-25deg);
     transform-origin: left;
     animation: price 1s forwards;
-    @include bp (500px) {
+    @include bp ($mobile) {
         position: absolute;
         top: 13px;
         width: 0;
@@ -373,7 +376,7 @@
         left: 7px;
     }
 }
-.aminationBottom__right_red2 {
+&__right_red2 {
     position: absolute;
     top: 30px;
     left: 15px;
@@ -382,7 +385,7 @@
     transform: rotate(-25deg);
     transform-origin: left;
     animation: price 1s 1s forwards;
-    @include bp (500px) {
+    @include bp ($mobile) {
         position: absolute;
         top: 13px;
         width: 0;
@@ -390,6 +393,8 @@
         left: 7px;
     }
 }
+}
+
 .priceAnim {
     display: inline-block;
     animation: priceLast 1s 2s;
@@ -399,7 +404,7 @@
     position: relative;
     text-align: left;
     img {
-        @include bp (500px) {
+        @include bp ($mobile) {
             width: 10px;
             top: 4px;
             right: 6px;
@@ -411,7 +416,7 @@
     position: absolute;
     left: 15px;
     top: 5px;
-    @include bp (500px) {
+    @include bp ($mobile) {
         top: 5px;
         left: 8px;
     }
@@ -421,10 +426,10 @@
     font-size: 36px;
     margin: 0px 0 19px 0;
     line-height: 1.2;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         font-size: 28px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         font-size: 2.5em;
         margin: 1.5em 0 0.5em;
     }
@@ -437,12 +442,12 @@
     margin: 0 0 40px 0;
     max-width: 285px;
     line-height: 1.5;
-    @include bp (1220px) {
+    @include bp ($desktoplarge) {
         font-size: 14px;
         margin: 0 0 28px;
         max-width: 246px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         font-size: 1.5em;
         max-width: 350px;
         margin: 0 auto 1.5em;
@@ -455,53 +460,52 @@
     border-radius: 5px;
     padding: 19px 10px 23px 10px;
     max-width: 313px;
-    @include bp (1220px) {
+    @include bp ($desktoplarge) {
         max-width: 300px;
         padding: 20px 5px 23px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         max-width: 86%;
         text-align: left;
         margin: auto;
     }
-} 
-.promoButton:hover {
+ 
+&:hover {
     background: $darkblue;
 }
-.promoButton__img {
+&__img {
     margin: -2px 15px 0 9px;
     float: left;
     overflow: hidden;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         margin: -6px 16px 0 7px;
     }
 }
 
-.promoButton__text {
+&__text {
     font-size: 0.875em;
     opacity: 0.6;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         font-size: 12px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         font-size: 1.25em;
     }
-}
 
-.promoButton__text_first {
+    &_first {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
     margin: 0 0 7px 0;
-    @include bp (1024 px) {
+    @include bp ($desktop) {
         font-size: 16px;
     }
-    @include bp (830px) {
+    @include bp ($tablet) {
         font-size: 1.75em;
     }
 }
-
-
+}
+}
 
 @keyframes Promo {
     0% {
@@ -549,7 +553,10 @@
     100% {
         width: 55px;
     }
-    @include bp (500px) {
+    
+}
+@include bp ($mobile) {
+    @keyframes price {
             0% {
                 width: 0px;
             }
@@ -561,6 +568,7 @@
             }
     }
 }
+
 
 @keyframes priceLast {
     0% {
@@ -583,8 +591,12 @@
         font-size: 20px;
         transform: rotate(0deg);
     }
-    @include bp (500px) {
-            0% {
+ 
+}
+
+@include bp ($mobile) {
+    @keyframes priceLast {
+                    0% {
                 font-size: 7px;;
                 transform: rotate(0deg);
             }

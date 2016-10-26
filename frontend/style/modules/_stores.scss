@@ -1,223 +1,242 @@
 .stores {
     padding: 90px 0 95px 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         padding: 73px 0 75px;
         max-width: 890px;
     }
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         padding: 4.6525em 1.3333em 4.6875em;
     }
-    @include bp (650px) {
+    @include bp ($tabletsmall2) {
         font-size: 0.8em;
     }
-    @include bp (550px) {
+    @include bp ($mobilelarge) {
         font-size: 0.7em;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         font-size: 0.5em;
     }
-}
-.stores__title {
+
+&__title {
     font-size: 36px;
     text-align: center;
     margin: 0 0 77px 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         font-size: 28px;
         margin: 0 0 60px;
     }
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         font-size: 2.5em;
     }
 }
-.stores__first {
+&__first {
     display: flex;
     justify-content: space-around;
     margin: 0 0 47px 0;
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         flex-wrap: wrap;
         margin: 0 0 4.0625em;
     }
 }
-.stores__big {
+&__big {
     flex-grow: 1;
     flex-basis: 400px;
     border-right: 1px solid $lightblue;
     padding: 90px 0 90px 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         padding: 73px 0;
     }
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         flex-basis: 14em;
         padding: 2.9375em 0;
     }
-    @include bp (650px) {
+    @include bp ($tabletsmall2) {
         flex-basis: 16em;
     }
-    @include bp (550px) {
+    @include bp ($mobilelarge) {
         flex-basis: 20em;
     }
-    @include bp (345px) {
+    @include bp ($mobilesmall) {
         flex-basis: 17em;
     }
 }
-.stores__big:nth-child(1){
-    @include bp (710px) {
+&__big:nth-child(1){
+    @include bp ($tabletsmall) {
     border-bottom: 1px solid $lightblue;
     }
 }
-.stores__big_second {
-    @include bp (710px) {
+&__big_second {
+    @include bp ($tabletsmall) {
         border-right: none;
         border-bottom: 1px solid $lightblue;
     }
 }
-.stores__big_third {
+&__big_third {
     border-right: none;
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         border-right: 1px solid $lightblue;
     }
 }
 
-.stores__big_fourth {
+&__big_fourth {
     display: none;
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         display: block;
         border-right: none;
     }
 }
 
-.stores__first_imgFirst {
+&__first_imgFirst {
     margin: 8px 0px 0px 0px;
 }
-.stores__first_imgSecond {
+&__first_imgSecond {
     margin: 0px 0px 0px 0px;
 }
 
-.stores__first_imgThird {
+&__first_imgThird {
     margin: 8px 0px 0px 0px;
 }
-.stores__link {
+&__big img{
+    @include bp ($mobile) {
+        width: 50%;
+    }
+}
+&__link {
     display: block;
     width: 100%;
     height: 100%;
     text-align: center;
-    @include bp (650px) {
+    @include bp ($tabletsmall2) {
         width: 80%;
         margin: auto;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         width: 60%;
         margin: auto;
     }
 }
-.stores__second {
+&__second {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 0 65px 0;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         margin: 0 0 47px;
     }
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         padding: 0 2.4em 0;
     }
 }
 
-.stores__small {
+&__small {
     flex-grow: 1;
     border-right: 1px solid $lightblue;
     flex-basis: 19%;
     align-content: stretch;
     padding: 40px 0;
     border-bottom: 1px solid $lightblue;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         padding: 31px 0;
     }
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         flex-basis: 7em;
         padding: 1.6875em;
     }
-    @include bp (650px) {
+    @include bp ($tabletsmall2) {
         flex-basis: 8em;
     }
-    @include bp (500px) {
+    @include bp ($mobile) {
         flex-basis: 14.5em;
         padding: 1em 0;
     }
-    @include bp (410px) {
-        flex-basis: 13em;
+    @include bp ($mobilesmall) {
+        flex-basis: 10.9em;
     }
-    @include bp (385px) {
+    @include bp ($mobilemin) {
         flex-basis: 25%;
     }
- }
-
-.stores__small_sixth, .stores__small_seventh, .stores__small_eighth,  .stores__small_ninth, .stores__small_last{
-    border-bottom: none;
-}
-
-.stores__small_first {
-    @include bp (710px) {
+ 
+&_first {
+    @include bp ($tabletsmall) {
         display: none;
     }
 }
-
-.stores__small_last {
-    border-right: none;
-}
-.stores__small_fourth {
-    @include bp (710px) {
+&_fourth {
+    @include bp ($tabletsmall) {
         border-right: none;
     }
 }
-.stores__small_fifth {
+&_fifth {
     border-right: none;
-    @include bp (710px) {
+    @include bp ($tabletsmall) {
         border-right: 1px solid $lightblue;
     }
     img {
-        @include bp (550px) {
+        @include bp ($mobilelarge) {
             width: 100%;
         }
     }
 }
 
-.stores__small_sixth {
-    @include bp (710px) {
+&_sixth {
+    border-bottom: none;
+    @include bp ($tabletsmall) {
         border-bottom: 1px solid $lightblue;
     }
 }
+    &_seventh {
+        border-right: 1px solid $lightblue;
+        border-bottom: none;
+    }
+&_eighth {
+        border-right: 1px solid $lightblue;
+    border-bottom: none;
+    }
+&_ninth {
+        border-right: 1px solid $lightblue;
+    border-bottom: none;
+    } 
+&_last{
+    border-bottom: none;
+    border-right: none;
+}
 
-.stores__small_ninth img{
-    @include bp (550px) {
+&_ninth img{
+    @include bp ($mobilelarge) {
         width: 100%
     }
 }
-.stores__small_seventh {
-    @include bp (710px) {
+&_seventh {
+    @include bp ($tabletsmall) {
         border-bottom: 1px solid $lightblue;
         border-right: none;
     }
 }
-.stores__small img {
-    @include bp (710px) {
+ img {
+    @include bp ($tabletsmall) {
         width: 70%;
     }
-}
-.stores__small img,  .stores__big img{
-    @include bp (500px) {
+     @include bp ($mobile) {
         width: 50%;
     }
 }
+    }
 
-.stores__seeall {
+    
+   
+    
+
+
+&__seeall {
     text-align: center;
-    @include bp (1024px) {
+    @include bp ($desktop) {
         font-size: 1em;
     }
-}
-.stores__seeall_link {
+&_link {
     text-decoration: none;
     color: $blue;
     font-size: 1.125em;
+}
+
+    }
 }
