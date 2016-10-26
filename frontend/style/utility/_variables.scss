@@ -15,10 +15,3 @@ $mobilesmall: 410;
 $mobilemin: 325;
 
 
-@mixin bp ($arg) {
-    @media only screen and (max-width:#{$arg}px) {
-        @content;
-    }
-    
-}
-
