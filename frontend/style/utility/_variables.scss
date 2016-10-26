@@ -4,9 +4,9 @@ $green: #66b44a;
 $red: #e63d42;
 $darkblue: #055b9d;
 
-@mixin border-r {
-    border-right: 1px solid $lightblue;
+@mixin bp ($arg) {
+    @media only screen and (max-width:$arg) {
+        @content;
+    }
 }
-@mixin border-b {
-   border-bottom: 1px solid $lightblue;
-}
+

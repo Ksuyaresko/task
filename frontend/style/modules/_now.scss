@@ -2,10 +2,29 @@
     text-align: center;
     font-size: 36px;
     padding: 87px 0 100px 0;
+    @include bp (1024px) {
+        font-size: 28px;
+        padding: 68px 0 80px;
+    }
+    @include bp (830px) {
+        padding: 1.5em 1em 2em;
+        line-height: 1.5;
+    }
 }
 .now__title {
     margin: 0 0 72px 0;
     line-height: 1.4;
+    @include bp (1024px) {
+        margin: 0 0 53px;
+    }
+    @include bp (500px) {
+        font-size: 20px;
+    }
+}
+.now__title_first {
+    @include bp (830px) {
+        margin-bottom: 0.4em;
+    }
 }
 .nowButton {
     margin: 0 auto;
@@ -15,113 +34,80 @@
     border-radius: 5px;
     padding: 19px 10px 23px 10px;
     margin: 0 auto 0;
+    @include bp (1024px) {
+        width: 300px;
+    }
+    @include bp (830px) {
+        width: auto;
+        max-width: 15em;
+        margin: 0 auto;
+        padding: 8px 10px 16px;
+    }
+    @include bp (500px) {
+        max-width: 10em;
+    }
 }
 .nowButton__text_first {
     font-size: 20px;
     text-align: left;
     margin: 4px 0 7px 72px;
     text-transform: uppercase;
+     @include bp (1024px) {
+        font-size: 16px;
+        margin: 7px 0 7px 72px;
+    }
+    @include bp (830px) {
+        font-size: 0.8em;
+        margin: 7px 0 -7px 84px;
+    }
+    @include bp (500px) {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+     @include bp (350px) {
+        font-size: 10px;
+        margin: 7px 0 -7px 65px;
+    }
+    
 }
 .nowButton__text_second {
     font-size: 14px;
     opacity: 0.6;
     text-align: left;
     margin: 0 0 0 72px;
+    @include bp (1024px) {
+        font-size: 12px;
+    }
+    @include bp (830px) {
+        font-size: 0.7em;
+        margin: 0 0 0 85px;
+    }
+    @include bp (500px) {
+        font-size: 10px;
+    }
+    @include bp (350px) {
+        font-size: 8px;
+        margin: 7px 0 -7px 65px;
+    }
 }
 .nowButton__img {
     margin: -3px -15px 0 7px;
     float: left;
     overflow: hidden;
+     @include bp (1024px) {
+        margin: -2px -15px 0 9px;
+    }
+    @include bp (830px) {
+        margin: 16px -15px 0 9px;
+    }
+    @include bp (500px) {
+        margin: 2px 0px 0 9px;
+    }
+    @include bp (350px) {
+        width: 42px;
+        margin: -4px 0 0px 5px;
+    }
 }
 .nowButton:hover {
     background: $darkblue;
-}
-@media (max-width:1024px) {
-    .now {
-        font-size: 28px;
-        padding: 68px 0 80px;
-    }
-    .now__title {
-    margin: 0 0 53px;
-}
-    .nowButton {
-        width: 300px;
-    }
-    .nowButton__text_first {
-        font-size: 16px;
-        margin: 7px 0 7px 72px;
-    }
-    .nowButton__text_second {
-        font-size: 12px;
-    }
-    .nowButton__img {
-    margin: -2px -15px 0 9px;
-}
-}
-@media (max-width:820px) {
-    .now {
-        padding: 1.5em 1em 2em;
-        line-height: 1.5;
-    }
-    .now__title_first {
-        margin-bottom: 0.4em;
-    }
-    .nowButton {
-        width: auto;
-        max-width: 15em;
-        margin: 0 auto;
-        padding: 8px 10px 16px;
-    }
-    .nowButton__img {
-    margin: 16px -15px 0 9px;
-}
-    .nowButton__text_first {
-        font-size: 0.8em;
-        margin: 7px 0 -7px 84px;
-    }
-    .nowButton__text_second {
-        font-size: 0.7em;
-        margin: 0 0 0 85px;
-    }
-
-}
-
-@media (max-width:500px) {
-    .now__title {
-        font-size: 20px;
-    }
-    .nowButton__text_first {
-        font-size: 14px;
-        margin-bottom: 3px;
-    }
-    .nowButton__text_second {
-        font-size: 10px;
-    }
-    .nowButton__img {
-    margin: 2px 0px 0 9px;
-}
-    .nowButton {
-        max-width: 10em;
-    }
-}
-@media (max-width:350px) {
-    .nowButton__text_first {
-        font-size: 10px;
-        margin-bottom: 2px;
-    }
-    .nowButton__text_second {
-        font-size: 8px;
-    }
-    .nowButton__img {
-    margin: -4px 0 0px 5px;
-}
-    .nowButton__text_first {
-    margin: 7px 0 -7px 65px;
-}
-    .nowButton__text_second {
-    margin: 7px 0 -7px 65px;
-}
-    .nowButton__img {
-        width: 42px;
-    }
 }

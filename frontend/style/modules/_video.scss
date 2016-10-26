@@ -1,5 +1,6 @@
 .video {
 position: relative;
+    background: $blue;
 }
 #myvideo {
     position: relative;
@@ -20,9 +21,40 @@ position: relative;
     left: calc(50% - 81px);
     top: calc(50% - 81px);
     overflow: hidden;
+    @include bp (1024px) {
+        left: calc(50% - 90px);
+        top: calc(50% - 120px);
+    }
+    @include bp (710px) {
+        width:6.25em;
+        height: 6.25em;
+        background-position: 0.125em 0.125em;
+        background-size: 6.25em 6.25em;
+        border-radius: 50%;
+        position: absolute;
+        left: calc(50% - 3.125em);
+        top: calc(50% - 6em);
+    }
+    @include bp (500px) {
+        width: 4.25em;
+        height: 4.25em;
+        background-size: 4.25em 4.25em;
+        left: calc(50% - 2.125em);
+        top: calc(50% - 4em);
+    }
 }
 .paused:hover {
     background: $darkblue url(../images/play.png) no-repeat;
+    @include bp (710px) {
+        background-size: 6.25em 6.25em;
+        left: calc(50% - 3.125em);
+        top: calc(50% - 6em);
+    }
+    @include bp (500px) {
+        background-size: 4.25em 4.25em;
+        left: calc(50% - 2.125em);
+        top: calc(50% - 4em);   
+    }
 }
 
 .plays {
@@ -44,6 +76,20 @@ position: relative;
     top: calc(50% + 115px);
     left: calc(50% - 156px);
     z-index: 2;
+    @include bp (1024px) {
+        font-size: 28px;
+        top: calc(50% + 100px);
+        left: calc(50% - 119px);
+    }
+    @include bp (710px) {
+        top: calc(50% + 30px);
+        left: calc(50% - 119px);
+    }
+    @include bp (500px) {
+             font-size: 14px;
+    top: calc(50% + 28px);
+    left: calc(50% - 60px);
+    }
 }
 .invisible {
     display: none;
@@ -57,57 +103,4 @@ position: relative;
     bottom: 0;
     left: 0;
     z-index: 1;
-}
-
-@media (max-width:1024px) {
-    .paused {
-    left: calc(50% - 90px);
-    top: calc(50% - 120px);
-    }
-    .howWorks {
-    font-size: 28px;
-    top: calc(50% + 100px);
-    left: calc(50% - 119px);
-}
-}
-@media (max-width:710px) {
-    .paused {
-    width:6.25em;
-    height: 6.25em;
-    background-position: 0.125em 0.125em;
-    background-size: 6.25em 6.25em;
-    border-radius: 50%;
-    position: absolute;
-    left: calc(50% - 3.125em);
-    top: calc(50% - 6em);
-    }
-    .paused:hover {
-    background-size: 6.25em 6.25em;
-    left: calc(50% - 3.125em);
-    top: calc(50% - 6em);
-    }
-    .howWorks {
-    top: calc(50% + 30px);
-    left: calc(50% - 119px);
-}
-}
-
-@media (max-width:500px) {
-    .paused {
-    width: 4.25em;
-    height: 4.25em;
-    background-size: 4.25em 4.25em;
-    left: calc(50% - 2.125em);
-    top: calc(50% - 4em);
-}
-    .paused:hover {
-    background-size: 4.25em 4.25em;
-    left: calc(50% - 2.125em);
-    top: calc(50% - 4em);
-}
-    .howWorks {
-    font-size: 14px;
-    top: calc(50% + 28px);
-    left: calc(50% - 60px);
-}
 }

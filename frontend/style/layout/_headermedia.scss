@@ -1,70 +1,59 @@
-#header {
-    background: linear-gradient(to right, $blue 0%, $blue 50%, $lightblue 50%, $lightblue 100%);
-    @include bp (830px){
-        height: auto;
-    }
-    @include bp (620px){
-        font-size: 0.8em;
-    }
-    @include bp (500px){
-        font-size: 0.5em;
-    }
-}
-
-.logo {
-    display: block;
-    background: url('../images/logo.png') no-repeat;
-    width: 155px;
-    height: 40px;
-    text-indent: -9999px;
-    overflow: hidden;
-    @include bp (1024px) {
-        background-size: 140px 36px;
-    }
-    @include bp(830px) {
-        width: 185px;
-        height: 45px;
-        background-size: 185px 45px;
-    }
-    @include bp (500px) {
-        width: 70px;
-        height: 20px;
-        background-size: 70px auto;
+/*
+.header {
+    @include breakpointTablet {
+        .header {
+        max-width: 37.5em;
+        padding: 1.25em 0;
         }
-}
-
-.header__topRight {
-    font-size: 14px;
-    opacity: 0.6;
-    text-align: right;
-    @include bp(1024px) {
-        font-size: 12px;
-    }
-    @include bp (830px) {
-        font-size: 1.25em;
-        padding: 3.9375em 2.9375em .625em 0;
-    }
-    @include bp (620px) {
-            padding: 0 0.9375em 0 0;
     }
 }
-
 .header__top {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-
+.header__left {
+    background: $blue;
+    min-width: 85px;
+    max-width: 350px;
+    padding: 51px 0 0 84px;
+    margin: 0 0 44px 0;
+    @include breakpointdesktop {
+        .header__left {
+        padding: 43px 0 0 63px;
+        margin: 0 0 46px 0;
+        }
+    }
+    @include breakpointTablet {
+        .header__left {
+        padding: 3em 0 0 4.25em;
+        margin: 0 0 3.5em
+        }
+    }
+    @include breakpoint620 {
+        .header__left {
+        padding: 2em 0 0 2em;
+        }
+    }
+    @include breakpointMob {
+        .header__left {
+        padding: 3em 0 0 2em;
+        }
+    }
+}
 .header__right {
     background: $lightblue;
     flex-grow: 0;
     align-self: flex-end;
     padding: 63px 87px 14px 0;
     text-align: right;
-    @include bp(1024px) {
+    @include breakpointdesktop {
+        .header__right {
         padding: 53px 66px 14px 0;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .header__right {
         padding: 1em 0.5em 0.625em 0;
         color: #fff;
         position: absolute;
@@ -73,67 +62,107 @@
         background: $blue;
         text-align: center;
         top: 2.5em;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .header__right {
         padding: 1em 0em .625em 0;
+        }
     }
 }
-    
-.header__left {
-    background: $blue;
-    min-width: 85px;
-    max-width: 350px;
-    padding: 51px 0 0 84px;
-    margin: 0 0 44px 0;
-    @include bp(1024px) {
-        padding: 43px 0 0 63px;
-        margin: 0 0 46px 0;
+.logo {
+    display: block;
+    background: url('../images/logo.png') no-repeat;
+    width: 155px;
+    height: 40px;
+    text-indent: -9999px;
+    overflow: hidden;
+    @include breakpointdesktop {
+        .logo {
+        background-size: 140px 36px;
+        }
     }
-    @include bp (830px) {
-        padding: 3em 0 0 4.25em;
-        margin: 0 0 3.5em
+    @include breakpointTablet {
+        .logo {
+        width: 185px;
+        height: 45px;
+        background-size: 185px 45px;
+        }
     }
-    @include bp (620px) {
-        padding: 2em 0 0 2em;
-    }
-    @include bp (500px) {
-        padding: 3em 0 0 2em;
+    @include breakpointMob {
+        .logo {
+        width: 70px;
+        height: 20px;
+        background-size: 70px auto;
+        }
     }
 }
-
+.header__topRight {
+    font-size: 14px;
+    opacity: 0.6;
+    text-align: right;
+    @include breakpointdesktop {
+        .header__topRight {
+        font-size: 12px;
+        }
+    }
+    @include breakpointTablet {
+        .header__topRight {
+        font-size: 1.25em;
+        padding: 3.9375em 2.9375em .625em 0;
+        }
+    }
+    @include breakpoint620 {
+           .header__topRight {
+            padding: 0 0.9375em 0 0;
+        } 
+    }
+}
 .promo {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 100vh;
     min-height: 560px;
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promo {
         flex-direction: column;
         height: 100%;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .promo {
         min-height: auto;
+        }
     }
 }
 .promo__left {
     background: $blue;
     padding: 0 0 0 0;
     min-width: 250px;
-    flex-basis: 380px;
+    flex-basis: 425px;
     position: relative;
-    @include bp (1220px) {
+    @include breakpoint1220 {
+        .promo__left {
         flex-basis: 420px;
+        }
     }
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promo__left {
         flex-basis: 385px;  
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promo__left {
         flex-basis: 320px;
         min-height: 16.875em;
+        }
     }
-    @include bp (500px){
+    @include breakpointMob {
+        .promo__left {
         flex-basis: 160px;
         min-width: auto;
+        }
     }
 }
 
@@ -144,18 +173,24 @@
     right: 0;
     top: calc(50% - 140px);
     transform: translateX(50%);
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promo__container {
         width: 342px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promo__container {
         right: 23%;
         top: 148px;
         transform: translateX(0);
         width: 21.375em;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .promo__container {
         right: 25%;
         top: 75px;
+        }
     }
 }
 
@@ -164,28 +199,39 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promo__right {
         text-align: center;
         background: $lightblue;
+        }
     }
 }
-
 .promo__right_container {
-    padding: 0 0 0 16em;
+    padding: 0 0 0 190px;
     max-width: 450px;
     margin: auto auto;
-    @include bp (1024px) {
-        padding: 4em 1.25em 0 15em;
+    @include breakpoint1220 {
+        .promo__right_container {
+            padding: 70px 0 21px 270px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointdesktop {
+        .promo__right_container {
+            padding: 11.5em 1.25em .04em;
+        }
+    }
+    @include breakpointTablet {
+        .promo__right_container {
         max-width: 500px;
         padding: 11.5em 1.25em 5em;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .promo__right_container {
         padding: 9.5em 1.25em 5em;
+        }
     }
 }
-
 .promo__left_box {
     background: #fff;
     border-radius: 10px;
@@ -194,18 +240,23 @@
     position: absolute;
     transform-origin: -100px;
     padding: 0 0 32px 0;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promo__left_box {
         width: 342px;
         padding: 0 0 27px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promo__left_box {
         width: 21.375em;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .promo__left_box {
         padding: 0 0 13px;
+        }
     }
 }
-
 .promoAnimation {
     animation: Promo 1s, Promo2 1s 1s, Promo3 1s 2s forwards;
     z-index: 10;
@@ -229,23 +280,30 @@
 }
 .promoAnimation__img {
     margin: 38px 0 0 -47px;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promoAnimation__img {
         width: 432px;
         margin: 35px 0 0 -42px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoAnimation__img {
         width: 26.6875em;
         margin: 2.125em 0 0 -2.3125em;
+        }
     }
 }
-
 .promoImg {
     margin: 0 0 0 -47px;
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoImg {
         width: 20.625em;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .promoImg {
         margin: 0 0 0 -15px;
+        }
     }
 }
 .promoAnimation__top {
@@ -256,12 +314,13 @@
     top: 0px;
     text-align: right;
     overflow: hidden;
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoAnimation__top {
         width: 9.375em;
         height: 9.375em;
+        }
     }
 }
-
 .promoAnimation__top_suggested {
     display: inline-block;
     text-transform: uppercase;
@@ -274,49 +333,67 @@
     color: #fff;
     border-right: 1px solid $green;
     border-left: 1px solid $green;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promoAnimation__top_suggested {
         font-size: 12px;  
         transform-origin: 51% 310%;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoAnimation__top_suggested {
         font-size: 0.75em;
         transform-origin: 45% 205%;
+        }
     }
-    @include bp (620px) {
+    @include breakpoint620 {
+        .promoAnimation__top_suggested {
         transform-origin: 42% 122%;
+        }
+    }
+    @include breakpoint620 {
+        .promoAnimation__top_suggested {
         padding: 4px 50px;
+        transform-origin: 35% -13%;
+        }
     }
 }
-
 .promoAnimation__bottom {
     display: flex;
     justify-content: space-around;
     font-size: 14px;
     font-weight: bold;
     margin: -7px 0 0 0;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promoAnimation__bottom {
         margin: -15px 0 0 0;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoAnimation__bottom {
         margin: 0px;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .promoAnimation__bottom {
         font-size: 7px;
+        }
     }
 }
-
-.aminationBottom__left {
+.aminationBottom__left{
     text-transform: uppercase;
     color: $green;
     margin-left: 6px;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .aminationBottom__left {
         margin-left: 20px;
+        }
     }
-    @include bp (620px) {
+    @include breakpoint620 {
+        .aminationBottom__left {
         margin-left: 5px;
+        }
     }
 }
-
 .aminationBottom__left_item {
     color: #000;
     margin: 3px 0 0 0;
@@ -333,25 +410,33 @@
     position: relative;
     font-size: 24px;
     font-weight: bold;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .aminationBottom__right {
         width: 109px;
         margin: -4px 13px 0 5px;
+        }
     }
-    @include bp (620px) {
+    @include breakpoint620 {
+        .aminationBottom__right {
         width: 100px;
         margin: 0px 2px 0 5px;
+        }
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        .aminationBottom__right {
         width: 50px;
         height: 10px;
         font-size: 7px;
+        }
     }
     img {
         position: absolute;
         right: 16px;
         top: 8px;
-        @include bp (1024px) {
+        @include breakpointdesktop {
+            .aminationBottom__right img {
             right: 13px;
+            }
         }
     }
 }
@@ -365,12 +450,14 @@
     transform: rotate(-25deg);
     transform-origin: left;
     animation: price 1s forwards;
-    @include bp (500px) {
+    @include breakpointMob {
+        .aminationBottom__right_red {
         position: absolute;
         top: 13px;
         width: 0;
         border-bottom: 2px solid #e63d42;
         left: 7px;
+        }
     }
 }
 .aminationBottom__right_red2 {
@@ -382,54 +469,65 @@
     transform: rotate(-25deg);
     transform-origin: left;
     animation: price 1s 1s forwards;
-    @include bp (500px) {
+    @include breakpointMob {
+        .aminationBottom__right_red2 {
         position: absolute;
         top: 13px;
         width: 0;
         border-bottom: 2px solid #e63d42;
         left: 7px;
+        }
     }
 }
 .priceAnim {
     display: inline-block;
     animation: priceLast 1s 2s;
 }
-
 .aminationBottom__right {
     position: relative;
     text-align: left;
     img {
-        @include bp (500px) {
+        @include breakpointMob {
+            .aminationBottom__right img {
             width: 10px;
             top: 4px;
             right: 6px;
+            }
         }
     }
 }
-
 .aminationBottom__right_price {
     position: absolute;
     left: 15px;
     top: 5px;
-    @include bp (500px) {
+    @include breakpointdesktop {
+        .aminationBottom__right_price {
+        left: 14px;
+        }
+    }
+    @include breakpointMob {
+        .aminationBottom__right_price {
         top: 5px;
         left: 8px;
+        } 
     }
 }
-
 .righttext__main {
     font-size: 36px;
     margin: 0px 0 19px 0;
     line-height: 1.2;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .righttext__main {
         font-size: 28px;
+        } 
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .righttext__main {
         font-size: 2.5em;
         margin: 1.5em 0 0.5em;
+        }
     }
 }
-
 .righttext__small {
     font-size: 16px;
     opacity: 0.6;
@@ -437,32 +535,39 @@
     margin: 0 0 40px 0;
     max-width: 285px;
     line-height: 1.5;
-    @include bp (1220px) {
+    @include breakpointdesktop {
+        .righttext__small {
         font-size: 14px;
         margin: 0 0 28px;
         max-width: 246px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .righttext__small {
         font-size: 1.5em;
         max-width: 350px;
         margin: 0 auto 1.5em;
+        }
     }
 }
-
 .promoButton {
     display: block;
     background: $blue;
     border-radius: 5px;
     padding: 19px 10px 23px 10px;
     max-width: 313px;
-    @include bp (1220px) {
-        max-width: 300px;
+    @include breakpointdesktop {
+        .promoButton {
+        max-width: 272px;
         padding: 20px 5px 23px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoButton {
         max-width: 86%;
         text-align: left;
         margin: auto;
+        }
     }
 } 
 .promoButton:hover {
@@ -472,35 +577,42 @@
     margin: -2px 15px 0 9px;
     float: left;
     overflow: hidden;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promoButton__img {
         margin: -6px 16px 0 7px;
+        }
     }
 }
-
 .promoButton__text {
-    font-size: 0.875em;
+    font-size: 14px;
     opacity: 0.6;
-    @include bp (1024px) {
+    @include breakpointdesktop {
+        .promoButton__text {
         font-size: 12px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoButton__text {
         font-size: 1.25em;
+        }
     }
 }
-
 .promoButton__text_first {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
     margin: 0 0 7px 0;
-    @include bp (1024 px) {
+    @include breakpointdesktop {
+        .promoButton__text_first {
         font-size: 16px;
+        }
     }
-    @include bp (830px) {
+    @include breakpointTablet {
+        .promoButton__text_first {
         font-size: 1.75em;
+        }
     }
 }
-
 
 
 @keyframes Promo {
@@ -549,7 +661,8 @@
     100% {
         width: 55px;
     }
-    @include bp (500px) {
+    @include breakpointMob {
+        @keyframes price {
             0% {
                 width: 0px;
             }
@@ -559,9 +672,9 @@
             100% {
                 width: 23px;
             }
+        }
     }
 }
-
 @keyframes priceLast {
     0% {
         font-size: 20px;;
@@ -583,7 +696,8 @@
         font-size: 20px;
         transform: rotate(0deg);
     }
-    @include bp (500px) {
+    @include breakpointMob {
+                @keyframes priceLast {
             0% {
                 font-size: 7px;;
                 transform: rotate(0deg);
@@ -604,5 +718,15 @@
                 font-size: 7px;
                 transform: rotate(0deg);
             }
+        }
     }
 }
+
+
+
+@media (max-width:330px) {
+    .promo__container {
+    right: 20%;
+    }
+}
+
